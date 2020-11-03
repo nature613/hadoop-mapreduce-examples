@@ -1,0 +1,98 @@
+GEOPOINT;ARRONDISSEMENT;GENRE;ESPECE;FAMILLE;ANNEE PLANTATION;HAUTEUR;CIRCONFERENCE;ADRESSE;NOM COMMUN;VARIETE;OBJECTID;NOM_EV
+(48.857140829, 2.29533455314);7;Maclura;pomifera;Moraceae;1935;13.0;;Quai Branly, avenue de La Motte-Piquet, avenue de la Bourdonnais, avenue de Suffren;Oranger des Osages;;6;Parc du Champs de Mars
+(48.8685686134, 2.31331809304);8;Calocedrus;decurrens;Cupressaceae;1854;20.0;195.0;Cours-la-Reine, avenue Franklin-D.-Roosevelt, avenue Matignon, avenue Gabriel;Cèdre à encens;;11;Jardin des Champs Elysées
+(48.8768191638, 2.33210374339);9;Pterocarya;fraxinifolia;Juglandaceae;1862;22.0;330.0;Place d'Estienne-d'Orves;Pérocarya du Caucase;;14;Square Etienne d'Orves
+(48.8373323894, 2.40776275516);12;Celtis;australis;Cannabaceae;1906;16.0;295.0;27, boulevard Soult;Micocoulier de Provence;;16;Avenue 27 boulevard Soult
+(48.8341842636, 2.46130493573);12;Quercus;petraea;Fagaceae;1784;30.0;430.0;route ronde des Minimes;Chêne rouvre;;19;Bois de Vincennes (lac des minimes)
+(48.8325900983, 2.41116455985);12;Platanus;x acerifolia;Platanaceae;1860;45.0;405.0;Ile de Bercy;Platane commun;;21;Bois de Vincennes (Ile de Bercy)
+(48.8226749117, 2.33869560229);14;Platanus;x acerifolia;Platanaceae;1840;40.0;580.0;Bd Jourdan, avenue Reille, rue Gazan, rue de la Cité‚-Universitaire, rue Nansouty;Platane commun;;26;Parc Montsouris
+(48.8428118006, 2.2972574926);15;Alnus;glutinosa;Betulaceae;1933;16.0;220.0;Rue Th‚ophraste-Renaudot, rue L‚on-Lhermitte, rue Jean Formig‚, rue du Docteur Jacquem;Aulne glutineux;;28;Square Saint Lambert
+(48.8717782491, 2.27973325759);16;Aesculus;hippocastanum;Sapindaceae;;30.0;505.0;Avenue Foch;Marronnier d'Inde;;30;Avenue Foch
+(48.8802898189, 2.38157469859);19;Ginkgo;biloba;Ginkgoaceae;1913;33.0;230.0;Rue Manin, rue Botzaris;Arbre aux quarante écus;;46;Parc des Buttes Chaumont
+(48.8820015094, 2.39836942721);19;Fraxinus;excelsior;Oleaceae;;30.0;365.0;Boulevard d'Algérie;Frêne commun;;52;Square de la Butte du Chapeau Rouge
+(48.846044762, 2.2529555706);16;Ailanthus;giraldii;Simaroubaceae;;35.0;460.0;3 avenue de la Porte d'Auteuil, 1 avenue Gordon Benett;Ailanthe;;53;Jardin des Serres d'Auteuil
+(48.8606198209, 2.2599223737);16;Taxodium;distichum;Taxodiaceae;1862;35.0;350.0;Berge du lac Inférieur;Cyprés chauve;;56;Bois de Boulogne (Berge du lac inférieur)
+(48.8232165418, 2.46016871078);12;Diospyros;kaki;Ebenaceae;;12.0;160.0;Route de la Ferme, route de la Pyramide;Kaki;;58;Jardin de l' Ecole Du Breuil
+(48.8764503804, 2.25765244347);16;Sequoiadendron;giganteum;Taxodiaceae;1850;30.0;;;Séquoia géant;;59;Bois de Boulogne (Portes Saint james)
+(48.8691485018, 2.27224125103);16;Gymnocladus;dioicus;Fabaceae;;10.0;162.0;;Chicot du Canada;;61;Square Schumann
+(48.8615768444, 2.25902702441);16;Fagus;sylvatica;Fagaceae;1857;10.0;200.0;;Hêtre pleureur;Pendula;63;Bois de Boulogne (petite île du Lac Inférieur)
+(48.8633555664, 2.26174532022);16;Pterocarya;fraxinifolia;Juglandaceae;1882;27.0;400.0;;Pérocarya du Caucase;;65;Bois de Boulogne (Berge du lac inférieur)
+(48.8646024472, 2.25171449183);16;Sequoiadendron;giganteum;Taxodiaceae;1872;;655.0;Route de la Grande Cascade, carrefour de la Croix Catelan;Séquoia géant;;67;Bois de Boulogne (Pré Catelan)
+(48.865022534, 2.2538285063);16;Pinus;nigra;Pinaceae;;30.0;250.0;Route de la Grande Cascade, carrefour de la Croix Catelan;Pin noir;;69;Bois de Boulogne (Pré Catelan)
+(48.8704017043, 2.24852577475);16;Platanus;orientalis;Platanaceae;1843;26.0;340.0;Allée de Longchamp, route de Sèvres à Neuilly;Platane d'Orient;;73;Bois de Boulogne (Bagatelle)
+(48.8347628794, 2.42029690936);12;Zelkova;serrata;Ulmaceae;1872;18.0;240.0;;Zelkova du Japon;;83;Bois de Vincennes (Ecole chiens guide d'aveugle)
+(48.8333849101, 2.41261756721);12;Juglans;nigra;Juglandaceae;1845;28.0;570.0;route de la ceinture du Lac Daumesnil;Noyer noir;;85;Bois de Vincennes (Lac Daumesnil/porte Dorée)
+(48.8324049718, 2.41169855654);12;Taxodium;distichum;Taxodiaceae;1930;20.0;270.0;Ile de Bercy;Cyprés chauve;;87;Bois de Vincennes (Ile de Bercy)
+(48.8213214388, 2.45537251962);12;Pinus;bungeana;Pinaceae;;10.0;50.0;Route de la Ferme, route de la Pyramide;Pin Napoléon;;95;Arboretum Ecole du Breuil
+(48.8204495642, 2.44579219199);12;Pinus;nigra;Pinaceae;1870;25.0;248.0;route de la Tourelle, route du Point de Vue;Pin noir;Austriaca;97;Bois de Vincennes (lac de gravelle)
+(48.8520958913, 2.34740754195);5;Robinia;pseudoacacia;Fabaceae;1601;11.0;385.0;Quai de Montebello, rue Lagrange, rue Saint-Julien-le-Pauvre;Robinier faux-acacia;;4;Square Viviani
+(48.8578717375, 2.29706549763);7;Eucommia;ulmoides;Eucomiaceae;;12.0;190.0;Quai Branly, avenue de La Motte-Piquet, avenue de la Bourdonnais, avenue de Suffren;Arbre à gutta-percha;;7;Parc du Champs de Mars
+(48.8792159582, 2.30640768208);8;Ginkgo;biloba;Ginkgoaceae;1879;22.0;283.0;Boulevard de Courcelles, avenue V‚lasquez, avenue Van-Dyck, avenue Ruysdael;Arbre aux quarante écus;;10;Parc Monceau
+(48.8669690843, 2.31951408752);8;Sequoiadendron;giganteum;Taxodiaceae;1850;20.0;320.0;Cours-la-Reine, avenue Franklin-D.-Roosevelt, avenue Matignon, avenue Gabriel;Séquoia géant;;12;Jardin des Champs Elysées
+(48.8353848188, 2.38157245444);12;Platanus;x acerifolia;Platanaceae;;35.0;510.0;Rue Paul-Belmondo, rue Joseph-Kessel, rue de l'Ambroise, rue François-Truffaut;Platane commun;;17;Parc de Bercy
+(48.8330496955, 2.35078878768);13;Aesculus;hippocastanum;Sapindaceae;1894;18.0;355.0;Rue Croulebarbe, rue Corvisart, rue Emile-Deslandres, rue des Cordelières;Marronnier d'Inde;;23;Square René Le Gall
+(48.8224956954, 2.3366608746);14;Fagus;sylvatica;Fagaceae;;30.0;370.0;Bd Jourdan, avenue Reille, rue Gazan, rue de la Cité‚-Universitaire, rue Nansouty;Hêtre pourpre;Purpurea;25;Parc Montsouris
+(48.8220238534, 2.33628540112);14;Sequoia;sempervirens;Taxodiaceae;1935;30.0;335.0;Bd Jourdan, avenue Reille, rue Gazan, rue de la Cité‚-Universitaire, rue Nansouty;Séquoia sempervirent;;27;Parc Montsouris
+(48.8814628758, 2.38367383179);19;Styphnolobium;japonicum;Fabaceae;1873;10.0;335.0;Rue Manin, rue Botzaris;Sophora du Japon;;44;Parc des Buttes Chaumont
+(48.8803986732, 2.38129958306);19;Platanus;orientalis;Platanaceae;1862;34.0;670.0;Rue Manin, rue Botzaris;Platane d'Orient;;45;Parc des Buttes Chaumont
+(48.8619346483, 2.39870061217);20;Acer;monspessulanum;Sapindacaees;1833;12.0;225.0;Rue du repos, rue des Rondeaux;Erable de Montpellier;;48;Cimetière du Père Lachaise
+(48.879759998, 2.38064802989);19;Sequoiadendron;giganteum;Taxodiaceae;;35.0;470.0;Rue Manin, rue Botzaris;Séquoia géant;;57;Parc des Buttes Chaumont
+(48.8640166469, 2.26774597209);16;Fagus;sylvatica;Fagaceae;;18.0;300.0;;Hêtre pourpre;Purpurea;60;Stade Muette
+(48.8647824278, 2.25120424857);16;Diospyros;kaki;Ebenaceae;1897;14.0;145.0;Route de la Grande Cascade, carrefour de la Croix Catelan;Kaki;;68;Bois de Boulogne (Pré Catelan)
+(48.8693939056, 2.24776773334);16;Sequoiadendron;giganteum;Taxodiaceae;1850;30.0;490.0;Allée de Longchamp, route de Sèvres à Neuilly;Séquoia géant;;72;Bois de Boulogne (Bagatelle)
+(48.867043584, 2.25320074406);16;Platanus;x acerifolia;Platanaceae;1872;40.0;520.0;Route du Lac à Bagatelle;Platane commun;;74;Bois de Boulogne (Route du Lac à Bagatelle)
+(48.8630909172, 2.24159242682);16;Pinus;nigra laricio;Pinaceae;1882;30.0;240.0;All‚e de Longchamp, carrefour des cascades;Pin de Corse;;76;Bois de Boulogne (réservoir de la cascade)
+(48.8632834941, 2.24066981564);16;Taxodium;distichum;Taxodiaceae;1859;30.0;290.0;Allée de Longchamp, carrefour des cascades;Cyprés chauve;;77;Bois de Boulogne (Grande Cascade)
+(48.8400020891, 2.46422657197);12;Acer;cappadocicum;Sapindaceae;1900;16.0;280.0;avenue de la Belle Gabrielle;Erable de Cappadoce;;78;Bois de Vincennes (pelouse de Fontenay)
+(48.8394165343, 2.43360205128);12;Liriodendron;tulipifera;Magnoliaceae;1862;35.0;305.0;avenue Daumesnil, Esplanade du Château de Vincennes;Tulipier de Virginie;;81;Bois de Vincennes (square Carnot)
+(48.8319232533, 2.41202933239);12;Liriodendron;tulipifera;Magnoliaceae;1930;22.0;205.0;Ile de Bercy;Tulipier de Virginie;;88;Bois de Vincennes (Ile de Bercy)
+(48.8320684332, 2.41182825531);12;Taxus;baccata;Taxaceae;1870;5.0;140.0;Ile de Bercy;If commun;;89;Bois de Vincennes (Ile de Bercy)
+(48.8292071873, 2.41301158121);12;Platanus;x acerifolia;Platanaceae;1871;25.0;490.0;route de la ceinture du Lac Daumesnil;Platane commun;;92;Bois de Vincennes (lac daumesnil)
+(48.8400754064, 2.43381509843);12;Diospyros;virginiana;Ebenaceae;1875;14.0;180.0;avenue Daumesnil, Esplanade du Château de Vincennes;Plaqueminier de Virginie;;94;Bois de Vincennes (square Carnot)
+(48.8183933679, 2.43791766754);12;Quercus;ilex;Fagaceae;1860;15.0;;route de Gravelle, route du Mar‚chal Leclerc (Saint Maurice);Chêne vert;;98;Bois de Vincennes (pente de Gravelle)
+(48.8557581795, 2.35399582218);4;Ulmus;carpinifolia;Ulmaceae;1935;15.0;180.0;Place St Gervais;Orme champêtre;;2;Place Saint Gervais
+(48.8453050031, 2.35307565328);5;Fagus;sylvatica;Fagaceae;1905;2.0;72.0;Rue des Arênes, rue de Navarre, rue Monge;Faux de Verzy;Tortuosa;3;Square des Arènes de Lutèce
+(48.8618464812, 2.37910176561);11;Corylus;colurna;Betulaceae;1879;20.0;245.0;Rue Lacharrière, rue Rochebrune, rue du Général-Guilhem, rue du Général-Blaise;Noisetier de Byzance;;15;Square Maurice Gardette
+(48.8420426954, 2.43848438671);12;Fagus;sylvatica;Fagaceae;1895;23.0;370.0;Cours Marigny;Hêtre pourpre;Purpurea;18;Bois de Vincennes (Cours Marigny)
+(48.8201249835, 2.44524393613);12;Cedrus;libanii;Pinaceae;1829;30.0;440.0;route de la Tourelle, route du Point de Vue;Cèdre du Liban;;22;Bois de Vincennes (lac de Gravelle)
+(48.8471789821, 2.25293802515);16;Quercus;suber;Fagaceae;1895;10.0;180.0;3 avenue de la Porte d'Auteuil, 1 avenue Gordon Benett;Chêne liège;;32;Jardin des Serres d'Auteuil
+(48.8450859307, 2.26948936839);16;Broussonetia;papyrifera;Moraceae;;12.0;190.0;Rue Mirabeau, avenue de Versailles;Murier à papier;;33;Parc Sainte Perinne
+(48.8634848878, 2.2403752961);16;Cedrus;libanii;Pinaceae;1862;30.0;460.0;All‚e de Longchamp, carrefour des cascades;Cèdre du Liban;;37;Bois de Boulogne (réservoir de la grande cascade)
+(48.8845880534, 2.34391859224);18;Platanus;orientalis;Platanaceae;1857;27.0;470.0;Place Saint-Pierre, rue Ronsard, rue Paul-Albert, rue Maurice Utrillo;Platane d'Orient;;42;Square Louise Michel
+(48.8830346813, 2.37007425143);19;Tilia;tomentosa;Malvaceae;1945;20.0;205.0;Place Stalingrad;Tilleul argenté;;43;Place de la bataille de Stalingrad
+(48.85646631, 2.39469777758);20;Platanus;x acerifolia;Platanaceae;1880;20.0;395.0;148 boulevard de Charonne;Platane commun;;51;Alignement 148 boulevard de Charonne
+(48.8471653404, 2.25199572129);16;Pterocarya;stenoptera;Juglandaceae;1905;30.0;530.0;3 avenue de la Porte d'Auteuil, 1 avenue Gordon Benett;Ptérocarya de Chine;;54;Jardin des Serres d'Auteuil
+(48.867221687, 2.27027693483);16;Cedrus;atlantica;Pinaceae;;6.0;195.0;;Cèdre bleu de l'Atlas ple;Glauca pendula;62;Square Debussy
+(48.8731203887, 2.24884917245);16;Fagus;sylvatica;Fagaceae;1868;15.0;230.0;Allée de Longchamp, route de Sèvres à Neuilly;Hêtre pleureur;Pendula;70;Bois de Boulogne (Bagatelle)
+(48.8732545226, 2.24886543775);16;Davidia;involucrata;Cornaceae;1906;12.0;120.0;Allée de Longchamp, route de Sèvres à Neuilly;Arbre aux pochettes;;71;Bois de Boulogne (Bagatelle)
+(48.8433252639, 2.4497117757);12;Quercus;petraea;Fagaceae;1815;31.0;450.0;;Chêne rouve;;80;Bois de Vincennes (fort neuf)
+(48.8323806372, 2.41052012477);12;Platanus;x acerifolia;Platanaceae;1860;42.0;405.0;Ile de Bercy;Platane commun;;90;Bois de Vincennes (Ile de Bercy)
+(48.8314334738, 2.4115101993);12;Diospyros;virginiana;Ebenaceae;1935;12.0;;Ile de Bercy;Plaqueminier de Virginie;;93;Bois de Vincennes (Ile de Bercy)
+(48.8210086122, 2.45551492936);12;Pinus;coulteri;Pinaceae;;14.0;225.0;Route de la Ferme, route de la Pyramide;Pin aux grands cônes;;96;Arboretum Ecole du Breuil
+(48.8785456147, 2.30757576047);8;Platanus;orientalis;Platanaceae;1814;31.0;700.0;Boulevard de Courcelles, avenue V‚lasquez, avenue Van-Dyck, avenue Ruysdael;Platane d'Orient;;9;Parc Monceau
+(48.8652536076, 2.31333976248);8;Platanus;orientalis;Platanaceae;1900;20.0;480.0;Cours-la-Reine, avenue Franklin-D.-Roosevelt, avenue Matignon, avenue Gabriel;Platane d'Orient;;13;Jardin des Champs Elysées
+(48.8476260928, 2.25278179131);16;Ginkgo;biloba;Ginkgoaceae;1895;25.0;395.0;3 avenue de la Porte d'Auteuil, 1 avenue Gordon Benett;Arbre aux quarante écus;;31;Jardin des Serres d'Auteuil
+(48.861574817, 2.2910717819);16;Corylus;colurna;Betulaceae;;20.0;260.0;Place du Trocad‚ro et du 11 Novembre, rue Benjamin Franklin, avenue Albert de Mun;Noisetier de Byzance;;34;Jardin du Trocadéro
+(48.8708601366, 2.24769299518);16;Taxus;baccata;Taxaceae;1772;13.0;235.0;Allée de Longchamp, route de Sèvres à Neuilly;If commun;;36;Bois de Boulogne (Bagatelle)
+(48.8646850734, 2.25360607406);16;Fagus;sylvatica;Fagaceae;1782;30.0;558.0;Route de la Grande Cascade, carrefour de la Croix Catelan;Hêtre pourpre;Purpurea;38;Bois de Boulogne (Pré Catelan)
+(48.8880577555, 2.31595908796);17;Platanus;x acerifolia;Platanaceae;1840;30.0;595.0;Place Charles Filion, rue Cardinet;Platane commun;;41;Square des Batignolles
+(48.8597396934, 2.39997847741);20;Aesculus;hippocastanum;Sapindaceae;;22.0;345.0;Rue du repos, rue des Rondeaux;Marronnier d'Inde;;47;Cimetière du Père Lachaise
+(48.8622517606, 2.26098883991);16;Ginkgo;biloba;Ginkgoaceae;1893;18.0;215.0;;Arbre aux quarante écus;;64;Bois de Boulogne (Berge du lac inférieur)
+(48.8336849895, 2.42111102704);12;Ginkgo;biloba;Ginkgoaceae;1865;25.0;255.0;;Arbre aux quarante écus;;84;Bois de Vincennes (Ecole chiens guide d'aveugle)
+(48.8648376291, 2.36062929978);3;Corylus;colurna;Betulaceae;1882;20.0;210.0;Rue du Temple, rue de Bretagne, Rue Perrée, rue Eugène-Spuller;Noisetier de Byzance;;1;Square du Temple
+(48.856902513, 2.33666989768);6;Catalpa;bignonioides;Bignoniaceae;;15.0;260.0;Rue de Seine, rue Mazarine;Catalpa commun;;5;Square Gabriel Pierné
+(48.8577766649, 2.29329076205);7;Platanus;orientalis;Platanaceae;1814;20.0;700.0;Quai Branly, avenue de La Motte-Piquet, avenue de la Bourdonnais, avenue de Suffren;Platane d'Orient;;8;Parc du Champs de Mars
+(48.8399672948, 2.43375148978);12;Fagus;sylvatica;Fagaceae;1865;20.0;530.0;avenue Daumesnil, Esplanade du Château de Vincennes;Hêtre pleureur;Pendula;20;Bois de Vincennes (square Carnot)
+(48.827737189, 2.3592096955);13;Cedrus;atlantica;Pinaceae;1939;25.0;350.0;128-160 avenue de Choisy, rue Georges-Eastman, rue Charles-Moureu, rue du Docteur-Magn;Cèdre bleu de l'Atlas;Glauca;24;Parc de Choisy
+(48.8723867386, 2.27912885453);16;Zelkova;carpinifolia;Ulmaceae;1852;30.0;395.0;Avenue Foch;Faux orme de Sibérie;;29;Avenue Foch
+(48.8619170093, 2.2924448277);16;Paulownia;tomentosa;Paulowniaceae;;20.0;420.0;Place du Trocad‚ro et du 11 Novembre, rue Benjamin Franklin, avenue Albert de Mun;Paulownia;;35;Jardin du Trocadéro
+(48.8716117578, 2.24933653506);16;Araucaria;araucana;Araucariaceae;1907;9.0;140.0;Allée de Longchamp, route de Sèvres à Neuilly;Désespoir du singe;;39;Bois de Boulogne (Bagatelle)
+(48.8691433358, 2.24587597613);16;Platanus;x acerifolia;Platanaceae;1847;40.0;480.0;Allée de Longchamp, route de Sèvres à Neuilly;Platane commun;;40;Bois de Boulogne (Bagatelle)
+(48.8661956075, 2.26238964912);16;Platanus;orientalis;Platanaceae;1859;25.0;375.0;Ile du lac inférieur;Platane d'Orient;;49;Bois de Boulogne (île du lac inférieur)
+(48.8215800145, 2.45494779675);12;Zelkova;carpinifolia;Ulmaceae;;12.0;245.0;Route de la Ferme, route de la Pyramide;Faux orme de Sibérie;;50;Arboretum de Ecole du Breuil
+(48.8727584235, 2.2873548507);16;Platanus;x acerifolia;Platanaceae;1852;30.0;525.0;Avenue Foch;Platane commun;;55;Avenue Foch
+(48.8588189763, 2.25832952119);16;Magnolia;grandiflora;Magnoliaceae;1863;12.0;;Allée de Longchamp, carrefour des cascades;Magnolia à grandes fleurs;;66;Bois de Boulogne (Berge du lac inférieur)
+(48.86260617, 2.23782412563);16;Zelkova;carpinifolia;Ulmaceae;1896;16.0;260.0;;Faux orme de Sibérie;;75;Bois de Boulogne (Moulin de Longchamp)
+(48.8395160905, 2.43350820893);12;Platanus;x acerifolia;Platanaceae;1918;32.0;570.0;avenue Daumesnil, Esplanade du Château de Vincennes;Platane commun;;82;Bois de Vincennes (Square Carnot)
+(48.833545551, 2.41033694606);12;Platanus;orientalis;Platanaceae;1860;22.0;475.0;route de la ceinture du Lac Daumesnil;Platane d'Orient;;86;Bois de Vincennes (Lac Daumesnil/porte Dorée)
+(48.8302532096, 2.41400587444);12;Acer;opalus;Sapindaceae;1870;15.0;160.0;Ile de Bercy;Erable d'Italie;;91;Bois de Vincennes (Ile de Bercy)
