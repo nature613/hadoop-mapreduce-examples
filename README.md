@@ -133,7 +133,7 @@ job.setCombinerClass(TreesReducer.class);
 job.setReducerClass(TreesReducer.class);
 ```
 
-Because the only information we will require is the district number, all we need is a `Text` key (that will contain the name of the district) with a `null` (`NullWritable`) value. By default, because of the way the MapReduce programming model works, all the keys will be made distinct, and we will get an `Iterable` of `NullWritable` instances aggregated. We can then just return the keys
+Because the only information we will require is the district number, all we need is a `Text` key (that will contain the name of the district) with a `null` (`NullWritable`) value. By default, because of the way the MapReduce programming model works, all the keys will be made distinct, and we will get an `Iterable` of `NullWritable` instances aggregated. We can then just return the keys, as they will all be the distinct districts
 
 ```
 job.setOutputKeyClass(Text.class);

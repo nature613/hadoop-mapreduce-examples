@@ -16,7 +16,7 @@ public class TreesMapper extends Mapper<Object, Text, Text, IntWritable> {
 			} catch (Exception e) {
 				System.out.println(value.toString());
 			}
-			context.write(district, new IntWritable(0));
+			context.write(district, new IntWritable(1));
 		}
 	}
 }
