@@ -50,40 +50,24 @@ You can find our repository at https://github.com/ivan-stepanian/hadoop-examples
 
 We first download the dataset using wget on the edge node, and put it on the HDFS:
 ```
--sh-4.2$ wget https://github.com/makayel/hadoop-examples-mapreduce/blob/main/src/test/resources/data/trees.csv
---2020-11-10 17:21:36--  https://github.com/makayel/hadoop-examples-mapreduce/blob/main/src/test/resources/data/trees.csv
-Resolving github.com (github.com)... 140.82.121.4
-Connecting to github.com (github.com)|140.82.121.4|:443... connected.
+-sh-4.2$ wget https://raw.githubusercontent.com/makayel/hadoop-examples-mapreduce/main/src/test/resources/data/trees.csv
+--2020-11-10 17:21:36-- https://raw.githubusercontent.com/makayel/hadoop-examples-mapreduce/main/src/test/resources/data/trees.csv
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.120.133
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.120.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
+Length: 16680 (16K) [text/plain]
 Saving to: ‘trees.csv’
 
-    [ <=>                                   ] 121 271     --.-K/s   in 0,05s   
+100%[======================================>] 16 680      --.-K/s   in 0,001s  
 
-2020-11-10 17:21:37 (2,43 MB/s) - ‘trees.csv’ saved [121271]
+2020-11-17:22:01 (15,6 MB/s) - ‘trees.csv’ saved [16680/16680]
 
 -sh-4.2$ hdfs dfs -put trees.csv
 
 -sh-4.2$ hdfs dfs -ls
 Found 18 items
-drwx------   - istepanian hdfs          0 2020-11-04 19:37 .staging
-drwxr-xr-x   - istepanian hdfs          0 2020-10-12 20:56 data
-drwxr-xr-x   - istepanian hdfs          0 2020-10-12 22:12 gutemberg
-drwxr-xr-x   - istepanian hdfs          0 2020-10-14 19:43 gutemberg-output
--rw-r--r--   3 istepanian hdfs   53643377 2020-10-30 15:46 hadoop-examples-mapreduce-1.0-SNAPSHOT-jar-with-dependencies.jar
--rw-r--r--   1 istepanian hdfs      33908 2020-10-06 09:48 local.txt
--rwxrwxrwx   1 istepanian hdfs        539 2020-10-12 22:38 mapper.py
--rw-r--r--   1 istepanian hdfs        729 2020-10-13 22:06 mapper_improved.py
-drwxr-xr-x   - istepanian hdfs          0 2020-10-30 15:56 output
-drwxr-xr-x   - istepanian hdfs          0 2020-11-03 18:19 output-district
-drwxr-xr-x   - istepanian hdfs          0 2020-11-04 19:37 output-districts
-drwxr-xr-x   - istepanian hdfs          0 2020-10-30 18:05 output_trees
-drwxr-xr-x   - istepanian hdfs          0 2020-10-06 09:51 raw
--rwxrwxrwx   1 istepanian hdfs        962 2020-10-12 22:38 reducer.py
--rw-r--r--   1 istepanian hdfs        998 2020-10-13 22:06 reducer_improved.py
--rw-r--r--   1 istepanian hdfs         22 2020-10-11 17:29 test.py
+...
 -rw-r--r--   3 istepanian hdfs     121271 2020-11-10 17:22 trees.csv
-drwxr-xr-x   - istepanian hdfs          0 2020-10-06 11:04 wordcount
 ```
 
 Using the default job already implemented in the target JAR (wordcount), we can test it on our dataset (we will create an alias, `launch_jar`, to avoid launching long commands):
@@ -106,11 +90,6 @@ Using the default job already implemented in the target JAR (wordcount), we can 
 
 -sh-4.2$ hdfs dfs -cat count/part-r-00000
 ...
-you	6
-your	3
-{{	1
-}}">	1
-}}</div>	1
 ·	2
 à	13
 écus;;10;Parc	1
@@ -154,7 +133,7 @@ job.setCombinerClass(TreesReducer.class);
 job.setReducerClass(TreesReducer.class);
 ```
 
-Because the only information we will require is the district number, all we need is a `Text` key (that will contain the name of the district) with a `null` (`NullWritable`) value. By default, because of the way the MapReduce programming model works, all the keys will be made distinct, and we will get an `Iterable`
+Because the only information we will require is the district number, all we need is a `Text` key (that will contain the name of the district) with a `null` (`NullWritable`) value. By default, because of the way the MapReduce programming model works, all the keys will be made distinct, and we will get an `Iterable` of `NullWritable` instances aggregated. We can then just return the keys
 
 ```
 job.setOutputKeyClass(Text.class);
