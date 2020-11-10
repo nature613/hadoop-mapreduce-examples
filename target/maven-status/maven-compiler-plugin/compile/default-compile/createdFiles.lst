@@ -1,0 +1,10 @@
+com/opstty/reducer/TreesReducer.class
+com/opstty/mapper/SpeciesMapper.class
+com/opstty/reducer/IntSumReducer.class
+com/opstty/job/ShowSpecies.class
+com/opstty/job/DistinctDistricts.class
+com/opstty/AppDriver.class
+com/opstty/job/WordCount.class
+com/opstty/mapper/TreesMapper.class
+com/opstty/reducer/SpeciesReducer.class
+com/opstty/mapper/TokenizerMapper.class

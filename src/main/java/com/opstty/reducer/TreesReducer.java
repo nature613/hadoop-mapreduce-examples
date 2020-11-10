@@ -1,6 +1,7 @@
 package com.opstty.reducer;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.NullWritable;
@@ -8,13 +9,15 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.Reducer.Context;
 
-public class TreesReducer extends Reducer<Text, NullWritable,
-Text,
-NullWritable> { //IntWritable> {
-    public void reduce(Text key, Iterable<NullWritable> values, Context context)
+public class TreesReducer extends Reducer<Text, NullWritable, Text, IntWritable> {
+    public void reduce(Text key, Iterable<IntWritable> values, Context context)
             throws IOException, InterruptedException {
-    	System.out.println(key);
-    	System.out.println(values);
-    	context.write(key, NullWritable.get());
+    	int sum = 0;	
+    	Iterator<IntWritable> it = values.iterator();
+    	while (it.hasNext()) {
+    	  it.next();
+    	  sum++;
+    	}
+    	context.write(key, new IntWritable(sum));
     }
 }
