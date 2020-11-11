@@ -49,7 +49,8 @@ You can find our repository at https://github.com/ivan-stepanian/hadoop-examples
 ## 1.8. The Project
 
 We first download the dataset using wget on the edge node, and put it on the HDFS:
-```
+
+```bash
 -sh-4.2$ wget https://raw.githubusercontent.com/makayel/hadoop-examples-mapreduce/main/src/test/resources/data/trees.csv
 --2020-11-10 17:21:36-- https://raw.githubusercontent.com/makayel/hadoop-examples-mapreduce/main/src/test/resources/data/trees.csv
 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.120.133
@@ -72,7 +73,7 @@ Found 18 items
 
 Using the default job already implemented in the target JAR (wordcount), we can test it on our dataset (we will create an alias, `launch_jar`, to avoid launching long commands):
 
-```
+```bash
 -sh-4.2$ alias launch_job="yarn jar ~/hadoop-examples-mapreduce/target/hadoop-examples-mapreduce-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
 -sh-4.2$ launch_job wordcount trees.csv count
@@ -109,14 +110,14 @@ For this MapReduce job, we create a simple job based on the files from the previ
 
 We then add our class to the `AppDriver` so the program can interpret our new command `distinctDistricts`:
 
-```
+```java
 programDriver.addClass("distinctDistricts", DistinctDistricts.class,
         "A map/reduce program that returns the distinct districts with trees in a predefined CSV formatting.");
 ```
 
 We can also add a custom command description in case of a wrong typing:
 
-```
+```java
 if (otherArgs.length < 2) {
     System.err.println("Usage: distinctDistricts <in> [<in>...] <out>");
     System.exit(2);
@@ -125,7 +126,7 @@ if (otherArgs.length < 2) {
 
 Then, we set our mapper and reducer classes for the job in `DistinctDistricts`:
 
-```
+```java
 Job job = Job.getInstance(conf, "distinctDistricts");
 job.setJarByClass(DistinctDistricts.class);
 job.setMapperClass(TreesMapper.class);
@@ -133,9 +134,44 @@ job.setCombinerClass(TreesReducer.class);
 job.setReducerClass(TreesReducer.class);
 ```
 
-Because the only information we will require is the district number, all we need is a `Text` key (that will contain the name of the district) with a `null` (`NullWritable`) value. By default, because of the way the MapReduce programming model works, all the keys will be made distinct, and we will get an `Iterable` of `NullWritable` instances aggregated. We can then just return the keys, as they will all be the distinct districts
+Because the only information we will require is the district number, all we need is a `Text` key (that will contain the name of the district) with a `null` (`NullWritable`) value. By default, because of the way the MapReduce programming model works, all the keys will be made distinct, and we will get an `Iterable` of `NullWritable` instances aggregated. We can then just return the keys, as they will all be the distinct districts.
 
-```
+In `DistinctDistricts.java`:
+
+```java
+...
 job.setOutputKeyClass(Text.class);
 job.setOutputValueClass(NullWritable.class);
+...
 ```
+
+In `TreesMapper.java`:java
+
+```java
+public class TreesMapper extends Mapper<Object, Text, Text, NullWritable> {
+	public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+    ...
+    context.write(district, new NullWritable());
+  }
+}
+```
+
+In `TreesReducer.java`:
+
+```java
+public class TreesReducer extends Reducer<Text, NullWritable, Text, NullWritable> {
+    public void reduce(Text key, Iterable<NullWritable> values, Context context)
+            throws IOException, InterruptedException {
+    ...
+    context.write(district, new NullWritable());
+  }
+}
+```
+
+However, just for fun, we will use an `IntWritable` for our outputs, and count the number of trees each district has (you can just keep the keys of the final output to know the distinct districts themselves).
+
+Now that we know the types of our outputs (we will note that the `Mapper` output is also the `Reducer` input, and because we set the `Combiner` class to the `Reducer` class, the output of the `Mapper` and the `Reducer` must be the same), we can work on the logic of our `MapReduce` job.
+
+The `Mapper` retrieves the file's data line by line and may do the operation `context.write(k,v)` (i.e. output key value couples) as many times as it wants for every input. In our case, we will output one key-value couple for every input as there is only one tree & one district described per line (except the first line, see below).
+
+To retrieve the district number from the lines, we simply need to access the value of the second column the same way that a CSV interpreter does: by splitting the line along its separator (in our case, a semi-colon). It is also important to note that we need to ignore the first line (which contains the column names and not data); to do so, we can either
