@@ -127,6 +127,10 @@ if (otherArgs.length < 2) {
 Then, we set our mapper and reducer classes for the job in `DistinctDistricts`:
 
 ```java
+if (otherArgs.length < 2) {
+    System.err.println("Usage: distinctDistricts <in> [<in>...] <out>");
+    System.exit(2);
+}
 Job job = Job.getInstance(conf, "distinctDistricts");
 job.setJarByClass(DistinctDistricts.class);
 job.setMapperClass(TreesMapper.class);
@@ -172,6 +176,138 @@ However, just for fun, we will use an `IntWritable` for our outputs, and count t
 
 Now that we know the types of our outputs (we will note that the `Mapper` output is also the `Reducer` input, and because we set the `Combiner` class to the `Reducer` class, the output of the `Mapper` and the `Reducer` must be the same), we can work on the logic of our `MapReduce` job.
 
-The `Mapper` retrieves the file's data line by line and may do the operation `context.write(k,v)` (i.e. output key value couples) as many times as it wants for every input. In our case, we will output one key-value couple for every input as there is only one tree & one district described per line (except the first line, see below).
+The `Mapper` retrieves the file's data line by line and may do the operation `context.write(k,v)` (i.e. output key value couples) as many times as it wants for every input. In our case, we will output one key-value couple for every input as there is only one tree & one district described per line, except the first line, which contains the column names and not data. To ignore it, we can either ignore a line if it contains unique data found in the first line (e.g. the column names themselves are not found in the rest of the data) or use a line counter and ignore the first iteration (or simply use a boolean, since only the first line needs to be ignored, and afterwards all lines are processed). We will use the latter option as it is safer, more universal and would allow us to know the current line being processed in a future implementation of the mapper (which can be useful information).
 
-To retrieve the district number from the lines, we simply need to access the value of the second column the same way that a CSV interpreter does: by splitting the line along its separator (in our case, a semi-colon). It is also important to note that we need to ignore the first line (which contains the column names and not data); to do so, we can either
+To retrieve the district number from the lines, we simply need to access the value of the second column the same way that a CSV interpreter does: by splitting the line along its separator (in our case, a semi-colon). To be able to count the number of trees per district in the reducer, we will associate the value 1 to the keys (the district numbers), so as to be summed during the aggregation in the `Reducer`.
+
+`Mapper.java`
+
+```java
+public class TreesMapper extends Mapper<Object, Text, Text, IntWritable> {
+	public int curr_line = 0;
+	public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+		if (curr_line != 0) {
+			context.write(new Text(value.toString().split(";")[1]), new IntWritable(1));
+		}
+		curr_line++;
+	}
+}
+```
+
+For the reducer, we do the same as a `wordcount`, summing all the values aggregated for the distinct keys and writing `(key, sum)` to the context.
+
+`Reducer.java`
+
+```java
+public class TreesReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+    public void reduce(Text key, Iterable<IntWritable> values, Context context)
+            throws IOException, InterruptedException {
+    	int sum = 0;
+        for (IntWritable val : values) {
+            sum += val.get();
+        }
+    	context.write(key, new IntWritable(sum));
+    }
+}
+```
+
+We then commit the modifications, push to the repository, pull back on the edge node, build the JAR and launch the command.
+
+```bash
+-sh-4.2$ launch_job distinctDistricts trees.csv districts
+
+...
+20/11/11 21:29:17 INFO mapreduce.Job:  map 0% reduce 0%
+20/11/11 21:29:26 INFO mapreduce.Job:  map 100% reduce 0%
+20/11/11 21:29:32 INFO mapreduce.Job:  map 100% reduce 100%
+...
+	File Input Format Counters
+		Bytes Read=16680
+	File Output Format Counters
+		Bytes Written=80
+
+-sh-4.2$ hdfs dfs -cat districts/part-r-00000
+
+11	1
+12	29
+13	2
+14	3
+15	1
+16	36
+17	1
+18	1
+19	6
+20	3
+3	1
+4	1
+5	2
+6	1
+7	3
+8	5
+9	1
+```
+
+The job works as expected.
+
+## 1.8.2. DistrictsWithTrees
+
+This job is extremely similar to the previous one; just instead of using the district number obtained from the second column as the key, we use the species of the trees obtained from the fourth column. Just like for the previous job, we will print the number of trees for each species. To just recover the unique species, it is possible to return `NullWritable` values for the keys and just return the values obtained from the `Mapper` in the `Reducer`.
+
+`AppDriver.java`
+
+```java
+...
+programDriver.addClass("treeSpecies", TreeSpecies.class,
+        "A map/reduce program that returns the distinct tree species in the Remarkable Trees of Paris dataset.");
+...
+```
+
+`TreeSpecies.java`
+
+```java
+...
+if (otherArgs.length < 2) {
+    System.err.println("Usage: treeSpecies <in> [<in>...] <out>");
+    System.exit(2);
+}
+Job job = Job.getInstance(conf, "treeSpecies");
+job.setJarByClass(TreeSpecies.class);
+job.setMapperClass(SpeciesMapper.class);
+job.setCombinerClass(SpeciesReducer.class);
+job.setReducerClass(SpeciesReducer.class);
+job.setOutputKeyClass(Text.class);
+job.setOutputValueClass(IntWritable.class);
+...
+```
+
+`SpeciesMapper.java`
+
+```java
+...
+public class SpeciesMapper extends Mapper<Object, Text, Text, IntWritable> {
+	public int curr_line = 0;
+
+	public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+		if (curr_line != 0) {
+			context.write(new Text(value.toString().split(";")[3]), new IntWritable(1));
+		}
+		curr_line++;
+	}
+}
+```
+
+`SpeciesReducer.java`
+
+```java
+...
+public class SpeciesReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+	public void reduce(Text key, Iterable<IntWritable> values, Context context)
+			throws IOException, InterruptedException {
+		int sum = 0;
+		for (IntWritable val : values) {
+			sum += val.get();
+		}
+		context.write(key, new IntWritable(sum));
+	}
+}
+```
