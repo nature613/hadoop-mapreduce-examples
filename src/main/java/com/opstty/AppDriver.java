@@ -4,6 +4,8 @@ import org.apache.hadoop.util.ProgramDriver;
 
 import com.opstty.job.DistinctDistricts;
 import com.opstty.job.MaxHeightSpecies;
+import com.opstty.job.MaxTreesDistrict;
+import com.opstty.job.MaxTreesDistrict2;
 import com.opstty.job.OldestTreeDistrictReduce;
 import com.opstty.job.OldestTreeDistrictSort;
 import com.opstty.job.TreeSpecies;
@@ -41,6 +43,12 @@ public class AppDriver {
 			programDriver.addClass("oldestTreeDistrictReduce", OldestTreeDistrictReduce.class,
 					"A map/reduce program that returns the district(s) with the oldest tree(s) in the Remarkable Trees of Paris dataset, checking through all the data.");
 
+			programDriver.addClass("maxTreesDistrict", MaxTreesDistrict.class,
+					"A map/reduce program that returns the district(s) with the most trees in the Remarkable Trees of Paris dataset, checking through all the data, using the Reducer's cleanup.");			
+			
+			programDriver.addClass("maxTreesDistrict2", MaxTreesDistrict2.class,
+					"A map/reduce program that returns the district(s) with the most trees in the Remarkable Trees of Paris dataset, checking through all the data, using two Reduce jobs.");			
+			
 			exitCode = programDriver.run(argv);
 		} catch (Throwable throwable) {
 			throwable.printStackTrace();
