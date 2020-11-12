@@ -13,9 +13,8 @@ public class OldestDistrictSortReducer extends Reducer<IntWritable, IntWritable,
 			throws IOException, InterruptedException {
 			if (first) {
 				for (IntWritable district : values) {
-					context.write(district, new IntWritable(Calendar.getInstance().get(Calendar.YEAR)-key.get()));
-					// Return the current age of the tree instead of the year it was planted
+					context.write(district, key);
 				}
-			}
+			} first = false;
 	}
 }

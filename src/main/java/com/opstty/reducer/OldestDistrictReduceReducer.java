@@ -24,7 +24,7 @@ public class OldestDistrictReduceReducer extends Reducer<NullWritable, MapWritab
 		MapWritable max_couple = Ordering.natural().onResultOf(
 				(Function<MapWritable, Comparable>) (v) -> { return getYear(v); }
 				// Lambda implementing the functional interface for the onResultOf() method,
-				//using the year as the sorting key 
+				// using the year as the sorting key 
 			).min(values);
 		Integer min_year = getYear(max_couple);
 		
