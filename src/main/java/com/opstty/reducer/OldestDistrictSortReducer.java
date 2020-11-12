@@ -1,7 +1,6 @@
 package com.opstty.reducer;
 
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.stream.StreamSupport;
 
 import org.apache.hadoop.io.IntWritable;

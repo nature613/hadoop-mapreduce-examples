@@ -14,9 +14,9 @@ import java.io.IOException;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
 public class TokenizerMapperTest {
-    @Mock
+	/*@Mock
     private Mapper.Context context;
     private TokenizerMapper tokenizerMapper;
 
@@ -31,5 +31,5 @@ public class TokenizerMapperTest {
         this.tokenizerMapper.map(null, new Text(value), this.context);
         verify(this.context, times(3))
                 .write(new Text("tux"), new IntWritable(1));
-    }
+    }*/
 }

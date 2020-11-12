@@ -1,13 +1,9 @@
 package com.opstty.job;
 
 import com.opstty.mapper.ConsolidateInputMapper;
-import com.opstty.mapper.TokenizerMapper;
 import com.opstty.mapper.TreesMapper;
-import com.opstty.reducer.IntSumReducer;
 import com.opstty.reducer.MaxTreesDistrictReducer2;
 import com.opstty.reducer.TreesReducer;
-import com.squareup.okhttp.internal.io.FileSystem;
-
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
@@ -16,7 +12,6 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.MapWritable;
 import org.apache.hadoop.io.NullWritable;
-import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;

@@ -1,14 +1,11 @@
 package com.opstty.job;
 
-import com.opstty.mapper.TokenizerMapper;
 import com.opstty.mapper.TreesMapper;
-import com.opstty.reducer.IntSumReducer;
 import com.opstty.reducer.MaxTreesDistrictReducer;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
