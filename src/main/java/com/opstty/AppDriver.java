@@ -26,7 +26,7 @@ public class AppDriver {
 			programDriver.addClass("treeSpecies", TreeSpecies.class,
 					"A map/reduce program that returns the distinct tree species in the Remarkable Trees of Paris dataset.");
 
-			programDriver.addClass("treeSpecies", TreeSpeciesCount.class,
+			programDriver.addClass("treeSpeciesCount", TreeSpeciesCount.class,
 					"A map/reduce program that returns the distinct tree species (and the number of trees for each one) in the Remarkable Trees of Paris dataset.");
 			
 			programDriver.addClass("maxHeightSpecies", MaxHeightSpecies.class,
