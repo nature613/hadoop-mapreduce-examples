@@ -10,10 +10,10 @@ public class HeightSortedTreeMapper extends Mapper<Object, Text, FloatWritable, 
 
 	public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 		if (curr_line != 0) {
-			String height = value.toString().split(";")[6];
 			try {
+				Float height = Float.parseFloat(value.toString().split(";")[6]);
 				String[] line_tokens = value.toString().split(";");
-				context.write(new FloatWritable(Float.parseFloat(height)), 
+				context.write(new FloatWritable(height), 
 						new Text(line_tokens[11] + " - " + line_tokens[2] + " " + line_tokens[3] + " (" + line_tokens[4] + ")"));
 			} catch (NumberFormatException ex) {
 				// If the value is not a float, skip by catching the error from the parseFloat() method

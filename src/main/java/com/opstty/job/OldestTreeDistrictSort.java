@@ -1,7 +1,8 @@
 package com.opstty.job;
 
-import com.opstty.mapper.TreesMapper;
-import com.opstty.reducer.TreesReducer;
+import com.opstty.mapper.OldestDistrictSortMapper;
+import com.opstty.reducer.OldestDistrictSortReducer;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -10,19 +11,19 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
-public class DistinctDistricts {
+public class OldestTreeDistrictSort {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
         if (otherArgs.length < 2) {
-            System.err.println("Usage: distinctDistricts <in> [<in>...] <out>");
+            System.err.println("Usage: oldestTreeDistrictSort <in> [<in>...] <out>");
             System.exit(2);
         }
-        Job job = Job.getInstance(conf, "distinctDistricts");
-        job.setJarByClass(DistinctDistricts.class);
-        job.setMapperClass(TreesMapper.class);
-        job.setCombinerClass(TreesReducer.class);
-        job.setReducerClass(TreesReducer.class);
+        Job job = Job.getInstance(conf, "oldestTreeDistrictSort");
+        job.setJarByClass(OldestTreeDistrictSort.class);
+        job.setMapperClass(OldestDistrictSortMapper.class);
+        job.setCombinerClass(OldestDistrictSortReducer.class); // The Mapper & the Reducer have the same output key-values
+        job.setReducerClass(OldestDistrictSortReducer.class);
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(IntWritable.class);
         for (int i = 0; i < otherArgs.length - 1; ++i) {
