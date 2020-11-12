@@ -6,7 +6,11 @@ import com.opstty.mapper.TreesMapper;
 import com.opstty.reducer.IntSumReducer;
 import com.opstty.reducer.MaxTreesDistrictReducer2;
 import com.opstty.reducer.TreesReducer;
+import com.squareup.okhttp.internal.io.FileSystem;
 
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -33,11 +37,14 @@ public class MaxTreesDistrict2 {
         job.setReducerClass(TreesReducer.class);
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(IntWritable.class);
+        
+        
+        Path temp_file = new Path("##.temp");
         for (int i = 0; i < otherArgs.length - 1; ++i) {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
         }
         FileOutputFormat.setOutputPath(job,
-                new Path("##.temp"));
+        		temp_file);
         job.waitForCompletion(true);
         
         Configuration conf_max = new Configuration();
@@ -50,10 +57,13 @@ public class MaxTreesDistrict2 {
         job_max.setMapOutputValueClass(MapWritable.class);
         job_max.setOutputKeyClass(IntWritable.class);
         job_max.setOutputValueClass(IntWritable.class);
-        FileInputFormat.addInputPath(job_max, new Path("##.temp"));
+        FileInputFormat.addInputPath(job_max, temp_file);
         FileOutputFormat.setOutputPath(job_max,
         		new Path(otherArgs[otherArgs.length-1]));
         
-        System.exit(job_max.waitForCompletion(true) ? 0 : 1);
+        boolean finished = job_max.waitForCompletion(true);
+        
+        FileUtils.deleteDirectory(new File(temp_file.toString()));
+        System.exit(finished ? 0 : 1);
     }
 }
