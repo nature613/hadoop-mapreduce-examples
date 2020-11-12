@@ -2,6 +2,7 @@ package com.opstty.reducer;
 
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.stream.StreamSupport;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.mapreduce.Reducer;
@@ -12,9 +13,14 @@ public class OldestDistrictSortReducer extends Reducer<IntWritable, IntWritable,
 	public void reduce(IntWritable key, Iterable<IntWritable> values, Context context)
 			throws IOException, InterruptedException {
 			if (first) {
-				for (IntWritable district : values) {
-					context.write(key, district);
-				}
+				StreamSupport.stream(values.spliterator(), false).distinct().forEach(v -> {
+					try {
+						context.write(key, v);
+					} catch (IOException | InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				});
 			} first = false;
 	}
 }
