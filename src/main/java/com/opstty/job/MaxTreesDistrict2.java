@@ -1,6 +1,6 @@
 package com.opstty.job;
 
-import com.opstty.mapper.IntegerIdentityMapper;
+import com.opstty.mapper.ConsolidateInputMapper;
 import com.opstty.mapper.TokenizerMapper;
 import com.opstty.mapper.TreesMapper;
 import com.opstty.reducer.IntSumReducer;
@@ -10,6 +10,8 @@ import com.opstty.reducer.TreesReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.MapWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -35,17 +37,20 @@ public class MaxTreesDistrict2 {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
         }
         FileOutputFormat.setOutputPath(job,
-                new Path("~#JobMaxTrees#~.temp"));
+                new Path("##.temp"));
         job.waitForCompletion(true);
         
         Configuration conf_max = new Configuration();
         Job job_max = Job.getInstance(conf_max, "max");
         job_max.setJarByClass(MaxTreesDistrict2.class);
-        job_max.setMapperClass(IntegerIdentityMapper.class);
+        job_max.setMapperClass(ConsolidateInputMapper.class);
+        //job_max.setCombinerClass(MaxTreesDistrictReducer2.class);
         job_max.setReducerClass(MaxTreesDistrictReducer2.class);
+        job_max.setMapOutputKeyClass(NullWritable.class);
+        job_max.setMapOutputValueClass(MapWritable.class);
         job_max.setOutputKeyClass(IntWritable.class);
         job_max.setOutputValueClass(IntWritable.class);
-        FileInputFormat.addInputPath(job_max, new Path("~#JobMaxTrees#~.temp"));
+        FileInputFormat.addInputPath(job_max, new Path("##.temp"));
         FileOutputFormat.setOutputPath(job_max,
         		new Path(otherArgs[otherArgs.length-1]));
         
