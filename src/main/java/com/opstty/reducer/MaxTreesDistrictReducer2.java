@@ -21,7 +21,7 @@ public class MaxTreesDistrictReducer2 extends Reducer<NullWritable, MapWritable,
 		int max_trees = district_trees.stream().map((arr) -> arr[1]).max(Integer::compare).get();
 		
 		district_trees.stream().filter(arr -> arr[1] == max_trees).map(arr -> arr[0]).distinct().forEach((district) -> { try {
-			context.write(new IntWritable(max_trees), new IntWritable(district));
+			context.write(new IntWritable(district), new IntWritable(max_trees));
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
 		} });
