@@ -1,32 +1,32 @@
 package com.opstty.job;
 
-import com.opstty.mapper.SpeciesMapper;
-import com.opstty.reducer.SpeciesReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 
-public class TreeSpecies {
+import com.opstty.mapper.SpeciesCountMapper;
+import com.opstty.reducer.SpeciesCountReducer;
+
+public class TreeSpeciesCount {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
         if (otherArgs.length < 2) {
-            System.err.println("Usage: treeSpecies <in> [<in>...] <out>");
+            System.err.println("Usage: treeSpeciesCount <in> [<in>...] <out>");
             System.exit(2);
         }
-        Job job = Job.getInstance(conf, "treeSpecies");
-        job.setJarByClass(TreeSpecies.class);
-        job.setMapperClass(SpeciesMapper.class);
-        job.setCombinerClass(SpeciesReducer.class);
-        job.setReducerClass(SpeciesReducer.class);
+        Job job = Job.getInstance(conf, "treeSpeciesCount");
+        job.setJarByClass(TreeSpeciesCount.class);
+        job.setMapperClass(SpeciesCountMapper.class);
+        job.setCombinerClass(SpeciesCountReducer.class);
+        job.setReducerClass(SpeciesCountReducer.class);
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(NullWritable.class);
+        job.setOutputValueClass(IntWritable.class);
         for (int i = 0; i < otherArgs.length - 1; ++i) {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
         }

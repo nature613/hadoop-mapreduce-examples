@@ -13,7 +13,7 @@ public class OldestDistrictSortReducer extends Reducer<IntWritable, IntWritable,
 			throws IOException, InterruptedException {
 			if (first) {
 				for (IntWritable district : values) {
-					context.write(key, district);
+					context.write(district, key);
 				}
 			} first = false;
 	}
