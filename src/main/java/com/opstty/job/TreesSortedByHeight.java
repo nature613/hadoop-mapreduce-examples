@@ -23,6 +23,7 @@ public class TreesSortedByHeight {
         job.setJarByClass(TreesSortedByHeight.class);
         job.setMapperClass(HeightSortedTreeMapper.class);
         //job.setCombinerClass(HeightSortedTreeReducer.class);
+        // The Mapper and the Reducer have mismatched key-value output types
         job.setReducerClass(HeightSortedTreeReducer.class);
         job.setMapOutputKeyClass(FloatWritable.class);
         job.setMapOutputValueClass(Text.class);

@@ -27,11 +27,12 @@ public class OldestDistrictReduceReducer extends Reducer<NullWritable, MapWritab
 				// using the year as the sorting key 
 			).min(values);
 		Integer min_year = getYear(max_couple);
+		context.write((IntWritable) max_couple.keySet().toArray()[0], new IntWritable(min_year));
 		
 		for (MapWritable couple : values) {
 			if (getYear(couple) == min_year) {
 				context.write((IntWritable) couple.keySet().toArray()[0],
-						new IntWritable(Calendar.getInstance().get(Calendar.YEAR)-min_year));
+						new IntWritable(min_year));
 			}
 		}
 	}

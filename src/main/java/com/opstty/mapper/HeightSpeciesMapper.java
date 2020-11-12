@@ -14,7 +14,7 @@ public class HeightSpeciesMapper extends Mapper<Object, Text, Text, FloatWritabl
 				Float height = Float.parseFloat(value.toString().split(";")[6]);
 				context.write(new Text(value.toString().split(";")[3]), new FloatWritable(height));
 			} catch (NumberFormatException ex) {
-				// If the value is not a float, skip by catching the error from the parseFloat() method
+				// If the value is not a float, skip it by catching the error from the parseFloat() method
 			}
 		} curr_line++;
 	}

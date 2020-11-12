@@ -28,19 +28,19 @@ public class AppDriver {
 
 			programDriver.addClass("treeSpeciesCount", TreeSpeciesCount.class,
 					"A map/reduce program that returns the distinct tree species (and the number of trees for each one) in the Remarkable Trees of Paris dataset.");
-			
+
 			programDriver.addClass("maxHeightSpecies", MaxHeightSpecies.class,
 					"A map/reduce program that returns the highest height of trees per species in the Remarkable Trees of Paris dataset.");
-			
+
 			programDriver.addClass("treesSortedByHeight", TreesSortedByHeight.class,
 					"A map/reduce program that returns all the trees in the Remarkable Trees of Paris dataset, sorted by height.");
-			
+
 			programDriver.addClass("oldestTreeDistrictSort", OldestTreeDistrictSort.class,
 					"A map/reduce program that returns the district(s) with the oldest tree(s) in the Remarkable Trees of Paris dataset, using a sort.");
-			
+
 			programDriver.addClass("oldestTreeDistrictReduce", OldestTreeDistrictReduce.class,
 					"A map/reduce program that returns the district(s) with the oldest tree(s) in the Remarkable Trees of Paris dataset, checking through all the data.");
-			
+
 			exitCode = programDriver.run(argv);
 		} catch (Throwable throwable) {
 			throwable.printStackTrace();

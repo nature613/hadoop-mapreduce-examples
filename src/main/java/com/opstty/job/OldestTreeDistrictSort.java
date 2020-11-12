@@ -23,10 +23,10 @@ public class OldestTreeDistrictSort {
         job.setJarByClass(OldestTreeDistrictSort.class);
         job.setMapperClass(OldestDistrictSortMapper.class);
         job.setCombinerClass(OldestDistrictSortReducer.class); 
-        // The Mapper & the Reducer have the same output key-values
         job.setReducerClass(OldestDistrictSortReducer.class);
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(IntWritable.class);
+        // The Mapper & the Reducer have the same output key-values
         for (int i = 0; i < otherArgs.length - 1; ++i) {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
         }
