@@ -24,6 +24,8 @@ public class TreesSortedByHeight {
         job.setMapperClass(HeightSortedTreeMapper.class);
         //job.setCombinerClass(HeightSortedTreeReducer.class);
         job.setReducerClass(HeightSortedTreeReducer.class);
+        job.setMapOutputKeyClass(FloatWritable.class);
+        job.setMapOutputValueClass(Text.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FloatWritable.class);
         for (int i = 0; i < otherArgs.length - 1; ++i) {
