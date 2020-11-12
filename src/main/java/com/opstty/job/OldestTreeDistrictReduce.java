@@ -26,6 +26,7 @@ public class OldestTreeDistrictReduce {
         job.setJarByClass(OldestTreeDistrictReduce.class);
         job.setMapperClass(OldestDistrictReduceMapper.class);
         //job.setCombinerClass(OldestDistrictReduceReducer.class);
+        // The Mapper and Reducer have mismatch key value output types
         job.setReducerClass(OldestDistrictReduceReducer.class);
         job.setMapOutputKeyClass(NullWritable.class);
         job.setMapOutputValueClass(MapWritable.class);
