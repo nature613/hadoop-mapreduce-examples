@@ -19,7 +19,7 @@ public class MaxTreesDistrictReducer extends Reducer<IntWritable, IntWritable, I
 	
 	public void cleanup(Context context) {
 		int max = sum_districts.stream().map(arr -> arr[1]).max(Integer::compare).get();
-		sum_districts.stream().filter(arr -> arr[0] == max)
+		sum_districts.stream().filter(arr -> arr[1] == max)
 		.forEach(arr -> {
 			try {
 				context.write(new IntWritable(arr[0]), new IntWritable(max));
