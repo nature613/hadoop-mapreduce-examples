@@ -31,7 +31,7 @@ public class MaxTreesDistrict2 {
         job.setMapperClass(TreesMapper.class);
         job.setCombinerClass(TreesReducer.class);
         job.setReducerClass(TreesReducer.class);
-        job.setOutputKeyClass(Text.class);
+        job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(IntWritable.class);
         for (int i = 0; i < otherArgs.length - 1; ++i) {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
