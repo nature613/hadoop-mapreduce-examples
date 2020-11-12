@@ -7,13 +7,9 @@ import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class SpeciesReducer extends Reducer<Text, IntWritable, Text, NullWritable> {
-	public void reduce(Text key, Iterable<IntWritable> values, Context context)
+public class SpeciesReducer extends Reducer<Text, NullWritable, Text, NullWritable> {
+	public void reduce(Text key, Iterable<NullWritable> values, Context context)
 			throws IOException, InterruptedException {
-		int sum = 0;
-		for (IntWritable val : values) {
-			sum += val.get();
-		}
 		context.write(key, NullWritable.get());
 	}
 }
