@@ -1,4 +1,4 @@
-# TP4 Lab2 - MapReduce2/Yarn - Java Jobs
+# TP4 Lab2 - MapReduce2/Yarn/Java Jobs
 
 ## 1.1. Installing OpenJDK
 
@@ -1238,9 +1238,11 @@ The job worked as expected.
 
 N.B. We tried adding JUnit tests to our project but could not proceed because of some error with the library we could not solve:
 
+```java
 Wanted but not invoked:
 context.write(pomifera, (null));
 -> at com.opstty.mapper.SpeciesMapperTest.testMap(SpeciesMapperTest.java:34)
 Actually, there were zero interactions with this mock.
+```
 
-For example. We managed to finish the lab without using the unit tests, thanks to effective debugging.
+We managed to finish the lab without using the unit tests, thanks to effective debugging.
