@@ -1122,7 +1122,7 @@ We can see that the job worked correctly.
 Just like for the previous query, we will use the `GROUP BY` keyword to do an aggregation, but use the `MAX` function instead of the `COUNT` function for the aggregator over the `hauteur` column, to get the height of the highest tree for each species.
 
 ```sql
-SELECT espece, COUNT(*) FROM trees_internal GROUP BY espece;
+SELECT espece, MAX(hauteur) FROM trees_internal GROUP BY espece;
 ```
 
 ```bash
