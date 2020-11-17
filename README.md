@@ -104,7 +104,7 @@ Using the default job already implemented in the target JAR (wordcount), we can 
 
 Everything works correctly, the job completed successfully.
 
-## 1.8.1. DistrictsWithTrees
+## 1.8.1. DistinctDistricts
 
 For this MapReduce job, we create a simple job based on the files from the previous job `wordcount`, creating a job class `DistinctDistricts`, a mapper class `TreesMapper` and a reducer class `TreesReducer`
 
