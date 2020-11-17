@@ -1,4 +1,4 @@
-# TP4 Lab2 - MapReduce2/Yarn/Java Jobs
+# Session 4/Lab2 - MapReduce2/Yarn/Java Jobs
 
 ## 1.1. Installing OpenJDK
 
