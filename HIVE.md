@@ -1,4 +1,4 @@
-# TP5 - Apache Hive - Beeline Client
+# Session 5 - Apache Hive - Beeline Client
 
 ## 1.1. Creating a Connection to the Beeline Client
 
