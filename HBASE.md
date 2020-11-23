@@ -866,38 +866,28 @@ put "istepanian:trees", "6", "species:ESPECE", "pomifera";
 put "istepanian:trees", "6", "species:FAMILLE", "Moraceae";
 put "istepanian:trees", "6", "species:NOM COMMUN", "Oranger des Osages";
 put "istepanian:trees", "6", "species:VARIETE", "";
-put "istepanian:trees", "6", "information:ANNEE PLANTATION", "Maclura";
-put "istepanian:trees", "6", "information:HAUTEUR", "Maclura";
-put "istepanian:trees", "6", "information:CIRCONFERENCE", "Maclura";
-put "istepanian:trees", "6", "address:GEOPOINT", "Maclura";
-put "istepanian:trees", "6", "address:ARRONDISSEMENT", "Maclura";
-put "istepanian:trees", "6", "address:ADRESSE", "Maclura";
-put "istepanian:trees", "6", "address:NOM_EV", "Maclura";
+put "istepanian:trees", "6", "information:ANNEE PLANTATION", "1935";
+put "istepanian:trees", "6", "information:HAUTEUR", "13.0";
+put "istepanian:trees", "6", "information:CIRCONFERENCE", "";
+put "istepanian:trees", "6", "address:GEOPOINT", "(48.857140829, 2.29533455314)";
+put "istepanian:trees", "6", "address:ARRONDISSEMENT", "7";
+put "istepanian:trees", "6", "address:ADRESSE", "Quai Branly, avenue de La Motte-Piquet, avenue de la Bourdonnais, avenue de Suffren";
+put "istepanian:trees", "6", "address:NOM_EV", "Parc du Champs de Mars
+";
 ...
-put "istepanian:trees", "86", "species:GENRE", "Platanus";
-put "istepanian:trees", "86", "species:ESPECE", "orientalis";
-put "istepanian:trees", "86", "species:FAMILLE", "Platanaceae";
-put "istepanian:trees", "86", "species:NOM COMMUN", "Platane d'Orient";
-put "istepanian:trees", "86", "species:VARIETE", "";
-put "istepanian:trees", "86", "information:ANNEE PLANTATION", "Platanus";
-put "istepanian:trees", "86", "information:HAUTEUR", "Platanus";
-put "istepanian:trees", "86", "information:CIRCONFERENCE", "Platanus";
-put "istepanian:trees", "86", "address:GEOPOINT", "Platanus";
-put "istepanian:trees", "86", "address:ARRONDISSEMENT", "Platanus";
-put "istepanian:trees", "86", "address:ADRESSE", "Platanus";
-put "istepanian:trees", "86", "address:NOM_EV", "Platanus";
 put "istepanian:trees", "91", "species:GENRE", "Acer";
 put "istepanian:trees", "91", "species:ESPECE", "opalus";
 put "istepanian:trees", "91", "species:FAMILLE", "Sapindaceae";
 put "istepanian:trees", "91", "species:NOM COMMUN", "Erable d'Italie";
 put "istepanian:trees", "91", "species:VARIETE", "";
-put "istepanian:trees", "91", "information:ANNEE PLANTATION", "Acer";
-put "istepanian:trees", "91", "information:HAUTEUR", "Acer";
-put "istepanian:trees", "91", "information:CIRCONFERENCE", "Acer";
-put "istepanian:trees", "91", "address:GEOPOINT", "Acer";
-put "istepanian:trees", "91", "address:ARRONDISSEMENT", "Acer";
-put "istepanian:trees", "91", "address:ADRESSE", "Acer";
-put "istepanian:trees", "91", "address:NOM_EV", "Acer";
+put "istepanian:trees", "91", "information:ANNEE PLANTATION", "1870";
+put "istepanian:trees", "91", "information:HAUTEUR", "15.0";
+put "istepanian:trees", "91", "information:CIRCONFERENCE", "160.0";
+put "istepanian:trees", "91", "address:GEOPOINT", "(48.8302532096, 2.41400587444)";
+put "istepanian:trees", "91", "address:ARRONDISSEMENT", "12";
+put "istepanian:trees", "91", "address:ADRESSE", "Ile de Bercy";
+put "istepanian:trees", "91", "address:NOM_EV", "Bois de Vincennes (Ile de Bercy)
+";
 
 
 Created table istepanian:trees
@@ -951,72 +941,125 @@ For Reference, please visit: http://hbase.apache.org/2.0/book.html#shell
 Version 2.1.6.3.1.5.0-152, rUnknown, Thu Dec 12 20:16:57 UTC 2019
 Took 0.0026 seconds                                                                                              
 hbase(main):001:0> scan 'istepanian:trees', {'LIMIT' => 5}
-ROW                           COLUMN+CELL                                                                        
- 1                            column=address:ADRESSE, timestamp=1606004999587, value=Corylus                     
- 1                            column=address:ARRONDISSEMENT, timestamp=1606004999584, value=Corylus              
- 1                            column=address:GEOPOINT, timestamp=1606004999581, value=Corylus                    
- 1                            column=address:NOM_EV, timestamp=1606004999590, value=Corylus                      
- 1                            column=information:ANNEE PLANTATION, timestamp=1606004999572, value=Corylus        
- 1                            column=information:CIRCONFERENCE, timestamp=1606004999578, value=Corylus           
- 1                            column=information:HAUTEUR, timestamp=1606004999575, value=Corylus                 
- 1                            column=species:ESPECE, timestamp=1606004999559, value=colurna                      
- 1                            column=species:FAMILLE, timestamp=1606004999562, value=Betulaceae                  
- 1                            column=species:GENRE, timestamp=1606004999556, value=Corylus                       
- 1                            column=species:NOM COMMUN, timestamp=1606004999565, value=Noisetier de Byzance     
- 1                            column=species:VARIETE, timestamp=1606004999569, value=                            
- 10                           column=address:ADRESSE, timestamp=1606004997708, value=Ginkgo                      
- 10                           column=address:ARRONDISSEMENT, timestamp=1606004997704, value=Ginkgo               
- 10                           column=address:GEOPOINT, timestamp=1606004997699, value=Ginkgo                     
- 10                           column=address:NOM_EV, timestamp=1606004997712, value=Ginkgo                       
- 10                           column=information:ANNEE PLANTATION, timestamp=1606004997686, value=Ginkgo         
- 10                           column=information:CIRCONFERENCE, timestamp=1606004997695, value=Ginkgo            
- 10                           column=information:HAUTEUR, timestamp=1606004997690, value=Ginkgo                  
- 10                           column=species:ESPECE, timestamp=1606004997669, value=biloba                       
- 10                           column=species:FAMILLE, timestamp=1606004997673, value=Ginkgoaceae                 
- 10                           column=species:GENRE, timestamp=1606004997664, value=Ginkgo                        
- 10                           column=species:NOM COMMUN, timestamp=1606004997678, value=Arbre aux quarante \xC3\x
-                              A9cus                                                                              
- 10                           column=species:VARIETE, timestamp=1606004997682, value=                            
- 11                           column=address:ADRESSE, timestamp=1606004996611, value=Calocedrus                  
- 11                           column=address:ARRONDISSEMENT, timestamp=1606004996607, value=Calocedrus           
- 11                           column=address:GEOPOINT, timestamp=1606004996604, value=Calocedrus                 
- 11                           column=address:NOM_EV, timestamp=1606004996614, value=Calocedrus                   
- 11                           column=information:ANNEE PLANTATION, timestamp=1606004996593, value=Calocedrus     
- 11                           column=information:CIRCONFERENCE, timestamp=1606004996601, value=Calocedrus        
- 11                           column=information:HAUTEUR, timestamp=1606004996597, value=Calocedrus              
- 11                           column=species:ESPECE, timestamp=1606004996574, value=decurrens                    
- 11                           column=species:FAMILLE, timestamp=1606004996580, value=Cupressaceae                
- 11                           column=species:GENRE, timestamp=1606004996570, value=Calocedrus                    
- 11                           column=species:NOM COMMUN, timestamp=1606004996585, value=C\xC3\xA8dre \xC3\xA0 enc
-                              ens                                                                                
- 11                           column=species:VARIETE, timestamp=1606004996589, value=                            
- 12                           column=address:ADRESSE, timestamp=1606004997746, value=Sequoiadendron              
- 12                           column=address:ARRONDISSEMENT, timestamp=1606004997743, value=Sequoiadendron       
- 12                           column=address:GEOPOINT, timestamp=1606004997741, value=Sequoiadendron             
- 12                           column=address:NOM_EV, timestamp=1606004997748, value=Sequoiadendron               
- 12                           column=information:ANNEE PLANTATION, timestamp=1606004997732, value=Sequoiadendron 
- 12                           column=information:CIRCONFERENCE, timestamp=1606004997738, value=Sequoiadendron    
- 12                           column=information:HAUTEUR, timestamp=1606004997735, value=Sequoiadendron          
- 12                           column=species:ESPECE, timestamp=1606004997719, value=giganteum                    
- 12                           column=species:FAMILLE, timestamp=1606004997722, value=Taxodiaceae                 
- 12                           column=species:GENRE, timestamp=1606004997716, value=Sequoiadendron                
- 12                           column=species:NOM COMMUN, timestamp=1606004997726, value=S\xC3\xA9quoia g\xC3\xA9a
-                              nt                                                                                 
- 12                           column=species:VARIETE, timestamp=1606004997729, value=                            
- 13                           column=address:ADRESSE, timestamp=1606004999259, value=Platanus                    
- 13                           column=address:ARRONDISSEMENT, timestamp=1606004999256, value=Platanus             
- 13                           column=address:GEOPOINT, timestamp=1606004999253, value=Platanus                   
- 13                           column=address:NOM_EV, timestamp=1606004999262, value=Platanus                     
- 13                           column=information:ANNEE PLANTATION, timestamp=1606004999243, value=Platanus       
- 13                           column=information:CIRCONFERENCE, timestamp=1606004999250, value=Platanus          
- 13                           column=information:HAUTEUR, timestamp=1606004999246, value=Platanus                
- 13                           column=species:ESPECE, timestamp=1606004999230, value=orientalis                   
- 13                           column=species:FAMILLE, timestamp=1606004999234, value=Platanaceae                 
- 13                           column=species:GENRE, timestamp=1606004999227, value=Platanus                      
- 13                           column=species:NOM COMMUN, timestamp=1606004999237, value=Platane d'Orient         
- 13                           column=species:VARIETE, timestamp=1606004999240, value=                            
+ROW                    COLUMN+CELL                                                   
+ 1                     column=address:ADRESSE, timestamp=1606163503607, value=Rue du 
+                       Temple, rue de Bretagne, Rue Perr\xC3\xA9e, rue Eug\xC3\xA8ne-
+                       Spuller                                                       
+ 1                     column=address:ARRONDISSEMENT, timestamp=1606163503605, value=
+                       3                                                             
+ 1                     column=address:GEOPOINT, timestamp=1606163503602, value=(48.86
+                       48376291, 2.36062929978)                                      
+ 1                     column=address:NOM_EV, timestamp=1606163503609, value=Square d
+                       u Temple\x0A                                                  
+ 1                     column=information:ANNEE PLANTATION, timestamp=1606163503595, 
+                       value=1882                                                    
+ 1                     column=information:CIRCONFERENCE, timestamp=1606163503600, val
+                       ue=210.0                                                      
+ 1                     column=information:HAUTEUR, timestamp=1606163503597, value=20.
+                       0                                                             
+ 1                     column=species:ESPECE, timestamp=1606163503585, value=colurna 
+ 1                     column=species:FAMILLE, timestamp=1606163503588, value=Betulac
+                       eae                                                           
+ 1                     column=species:GENRE, timestamp=1606163503583, value=Corylus  
+ 1                     column=species:NOM COMMUN, timestamp=1606163503590, value=Nois
+                       etier de Byzance                                              
+ 1                     column=species:VARIETE, timestamp=1606163503593, value=       
+ 10                    column=address:ADRESSE, timestamp=1606163502051, value=Bouleva
+                       rd de Courcelles, avenue V\xE2\x80\x9Alasquez, avenue Van-Dyck
+                       , avenue Ruysdael                                             
+ 10                    column=address:ARRONDISSEMENT, timestamp=1606163502048, value=
+                       8                                                             
+ 10                    column=address:GEOPOINT, timestamp=1606163502046, value=(48.87
+                       92159582, 2.30640768208)                                      
+ 10                    column=address:NOM_EV, timestamp=1606163502053, value=Parc Mon
+                       ceau\x0A                                                      
+ 10                    column=information:ANNEE PLANTATION, timestamp=1606163502039, 
+                       value=1879                                                    
+ 10                    column=information:CIRCONFERENCE, timestamp=1606163502043, val
+                       ue=283.0                                                      
+ 10                    column=information:HAUTEUR, timestamp=1606163502041, value=22.
+                       0                                                             
+ 10                    column=species:ESPECE, timestamp=1606163502029, value=biloba  
+ 10                    column=species:FAMILLE, timestamp=1606163502031, value=Ginkgoa
+                       ceae                                                          
+ 10                    column=species:GENRE, timestamp=1606163502026, value=Ginkgo   
+ 10                    column=species:NOM COMMUN, timestamp=1606163502034, value=Arbr
+                       e aux quarante \xC3\xA9cus                                    
+ 10                    column=species:VARIETE, timestamp=1606163502036, value=       
+ 11                    column=address:ADRESSE, timestamp=1606163500902, value=Cours-l
+                       a-Reine, avenue Franklin-D.-Roosevelt, avenue Matignon, avenue
+                        Gabriel                                                      
+ 11                    column=address:ARRONDISSEMENT, timestamp=1606163500895, value=
+                       8                                                             
+ 11                    column=address:GEOPOINT, timestamp=1606163500890, value=(48.86
+                       85686134, 2.31331809304)                                      
+ 11                    column=address:NOM_EV, timestamp=1606163500907, value=Jardin d
+                       es Champs Elys\xC3\xA9es\x0A                                  
+ 11                    column=information:ANNEE PLANTATION, timestamp=1606163500876, 
+                       value=1854                                                    
+ 11                    column=information:CIRCONFERENCE, timestamp=1606163500885, val
+                       ue=195.0                                                      
+ 11                    column=information:HAUTEUR, timestamp=1606163500880, value=20.
+                       0                                                             
+ 11                    column=species:ESPECE, timestamp=1606163500855, value=decurren
+                       s                                                             
+ 11                    column=species:FAMILLE, timestamp=1606163500861, value=Cupress
+                       aceae                                                         
+ 11                    column=species:GENRE, timestamp=1606163500851, value=Calocedru
+                       s                                                             
+ 11                    column=species:NOM COMMUN, timestamp=1606163500867, value=C\xC
+                       3\xA8dre \xC3\xA0 encens                                      
+ 11                    column=species:VARIETE, timestamp=1606163500872, value=       
+ 12                    column=address:ADRESSE, timestamp=1606163502082, value=Cours-l
+                       a-Reine, avenue Franklin-D.-Roosevelt, avenue Matignon, avenue
+                        Gabriel                                                      
+ 12                    column=address:ARRONDISSEMENT, timestamp=1606163502079, value=
+                       8                                                             
+ 12                    column=address:GEOPOINT, timestamp=1606163502076, value=(48.86
+                       69690843, 2.31951408752)                                      
+ 12                    column=address:NOM_EV, timestamp=1606163502084, value=Jardin d
+                       es Champs Elys\xC3\xA9es\x0A                                  
+ 12                    column=information:ANNEE PLANTATION, timestamp=1606163502068, 
+                       value=1850                                                    
+ 12                    column=information:CIRCONFERENCE, timestamp=1606163502073, val
+                       ue=320.0                                                      
+ 12                    column=information:HAUTEUR, timestamp=1606163502071, value=20.
+                       0                                                             
+ 12                    column=species:ESPECE, timestamp=1606163502058, value=giganteu
+                       m                                                             
+ 12                    column=species:FAMILLE, timestamp=1606163502060, value=Taxodia
+                       ceae                                                          
+ 12                    column=species:GENRE, timestamp=1606163502056, value=Sequoiade
+                       ndron                                                         
+ 12                    column=species:NOM COMMUN, timestamp=1606163502063, value=S\xC
+                       3\xA9quoia g\xC3\xA9ant                                       
+ 12                    column=species:VARIETE, timestamp=1606163502066, value=       
+ 13                    column=address:ADRESSE, timestamp=1606163503345, value=Cours-l
+                       a-Reine, avenue Franklin-D.-Roosevelt, avenue Matignon, avenue
+                        Gabriel                                                      
+ 13                    column=address:ARRONDISSEMENT, timestamp=1606163503343, value=
+                       8                                                             
+ 13                    column=address:GEOPOINT, timestamp=1606163503340, value=(48.86
+                       52536076, 2.31333976248)                                      
+ 13                    column=address:NOM_EV, timestamp=1606163503347, value=Jardin d
+                       es Champs Elys\xC3\xA9es\x0A                                  
+ 13                    column=information:ANNEE PLANTATION, timestamp=1606163503333, 
+                       value=1900                                                    
+ 13                    column=information:CIRCONFERENCE, timestamp=1606163503338, val
+                       ue=480.0                                                      
+ 13                    column=information:HAUTEUR, timestamp=1606163503336, value=20.
+                       0                                                             
+ 13                    column=species:ESPECE, timestamp=1606163503324, value=oriental
+                       is                                                            
+ 13                    column=species:FAMILLE, timestamp=1606163503326, value=Platana
+                       ceae                                                          
+ 13                    column=species:GENRE, timestamp=1606163503322, value=Platanus 
+ 13                    column=species:NOM COMMUN, timestamp=1606163503329, value=Plat
+                       ane d'Orient                                                  
+ 13                    column=species:VARIETE, timestamp=1606163503331, value=       
 5 row(s)
-Took 0.3560 seconds                                                                                              
+Took 0.3646 seconds
+                                                                           
 hbase(main):002:0> 
 ```
 
